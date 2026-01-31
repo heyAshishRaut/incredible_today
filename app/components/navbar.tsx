@@ -10,7 +10,7 @@ const items = [
     {name: "Affiliates", id: "affiliates"},
     {name: "Blog", id: "blog"},
     {name: "Contact", id: "contact"},
-];
+]
 
 const Navbar = () => {
     const [hoveredId, setHoveredId] = useState<string | null>(null);
@@ -20,7 +20,7 @@ const Navbar = () => {
             className="
         font-grotesk
         hidden
-        tablet:flex
+        laptop:flex
         h-[48px]
         tablet:gap-x-[12px]
         laptop:gap-x-[20px]

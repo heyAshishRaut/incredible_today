@@ -4,6 +4,9 @@ import UseCases from "@/app/components/sections/useCases"
 import Integrations from "@/app/components/sections/integrations"
 import Build from "@/app/components/sections/build"
 import Integrations2 from "@/app/components/sections/integrations2"
+import Features from "@/app/components/sections/features"
+import Security from "@/app/components/sections/security"
+import ExploreAI from "@/app/components/sections/exploreAI"
 
 export default function Home() {
     return (
@@ -14,6 +17,9 @@ export default function Home() {
             <Integrations/>
             <Build/>
             <Integrations2/>
+            <Features/>
+            <Security/>
+            <ExploreAI/>
         </div>
     )
 }

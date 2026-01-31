@@ -32,7 +32,7 @@ const accordionItems = [
 
 const UseCases = () => {
     const DURATION = 5
-    const [activeIndex, setActiveIndex] = useState<number | null>(0)
+    const [activeIndex, setActiveIndex] = useState<number | null>(null)
 
     return (
         <div className={`w-full flex flex-col gap-y-20 p-5 tablet:p-10 laptop:p-25 desktop:p-[120px]`}>
@@ -235,7 +235,7 @@ const UseCases = () => {
                                             onClick={() => setActiveIndex(open ? null : index)}
                                             className={`h-12 w-full flex justify-between items-center cursor-pointer ${!open ? "pb-4 border-b border-[#E0E0E0]" : "pb-0 border-none"}`}
                                         >
-                                            <div className="font-grotesk text-[24px] leading-[118%] tracking-[-2%]">
+                                            <div className="font-grotesk text-[20px] tablet:text-[24px] leading-[118%] tracking-[-2%]">
                                                 {item.title}
                                             </div>
 
@@ -267,7 +267,7 @@ const UseCases = () => {
                                                 >
                                                     <div className="w-full flex flex-col gap-y-[25px] pt-5">
 
-                                                        <div className="text-[16px] font-grotesk leading-[150%] tracking-[-2%] text-[#666]">
+                                                        <div className="text-[14px] tablet:text-[16px] font-grotesk leading-[150%] tracking-[-2%] text-[#666]">
                                                             {item.description}
                                                         </div>
 
@@ -275,7 +275,7 @@ const UseCases = () => {
                                                             {item.tags.map((tag, i) => (
                                                                 <div
                                                                     key={i}
-                                                                    className="rounded-[10px] p-[10px] bg-[#F9F9F9] text-[#666] border border-[#EDEDED] font-grotesk text-[16px] leading-[150%] tracking-[-2%]"
+                                                                    className="rounded-[10px] p-[10px] bg-[#F9F9F9] text-[#666] border border-[#EDEDED] font-grotesk text-[14px] tablet:text-[16px] leading-[150%] tracking-[-2%]"
                                                                 >
                                                                     {tag}
                                                                 </div>
@@ -311,10 +311,10 @@ const UseCases = () => {
 
                     <div style={{ backgroundImage: `url(${useCase.src})`}} className={`bg-cover h-[564px] laptop:h-full w-full max-w-[450px] tablet:max-w-[640px] laptop:w-[640px] rounded-[14px]`}>
                         <div className={`relative h-full w-full flex flex-col p-4`}>
-                            <div className={`self-end p-3 bg-white/50 w-[80%] md:w-1/2 rounded-[12px] font-sans text-[15px] shadow-[0_6px_16px_rgba(0,0,0,0.08)]`}>
+                            <div className={`self-end p-3 bg-white/50 w-[80%] tablet:w-1/2 rounded-[12px] font-sans text-[15px] shadow-[0_6px_16px_rgba(0,0,0,0.08)]`}>
                                 Hey Incredible! Add 50 - Sub-sheets to my weekly tracker spreadsheets
                             </div>
-                            <div className={`mt-10 p-[6px] rounded-[12px] w-full md:w-[477px] h-[184px] bg-white/50 flex flex-col gap-y-[6px]`}>
+                            <div className={`mt-10 p-[6px] rounded-[12px] w-full tablet:w-[477px] h-[184px] bg-white/50 flex flex-col gap-y-[6px]`}>
                                 <div className={`w-full h-11 bg-black/5 rounded-[6px] py-3 px-4 flex gap-x-3 items-center`}>
                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M17.9422 12.3172L14.1922 16.0672C14.0749 16.1845 13.9159 16.2503 13.75 16.2503C13.5841 16.2503 13.4251 16.1845 13.3078 16.0672C13.1905 15.9499 13.1247 15.7909 13.1247 15.625C13.1247 15.4591 13.1905 15.3001 13.3078 15.1828L15.9914 12.5H10C7.84581 12.4977 5.78051 11.641 4.25727 10.1177C2.73403 8.59449 1.87727 6.52919 1.875 4.375C1.875 4.20924 1.94085 4.05027 2.05806 3.93306C2.17527 3.81585 2.33424 3.75 2.5 3.75C2.66576 3.75 2.82473 3.81585 2.94194 3.93306C3.05915 4.05027 3.125 4.20924 3.125 4.375C3.12707 6.19773 3.85206 7.94521 5.14092 9.23408C6.42979 10.5229 8.17727 11.2479 10 11.25H15.9914L13.3078 8.56719C13.1905 8.44991 13.1247 8.29085 13.1247 8.125C13.1247 7.95915 13.1905 7.80009 13.3078 7.68281C13.4251 7.56554 13.5841 7.49965 13.75 7.49965C13.9159 7.49965 14.0749 7.56554 14.1922 7.68281L17.9422 11.4328C18.0003 11.4909 18.0464 11.5598 18.0779 11.6357C18.1093 11.7115 18.1255 11.7929 18.1255 11.875C18.1255 11.9571 18.1093 12.0385 18.0779 12.1143C18.0464 12.1902 18.0003 12.2591 17.9422 12.3172Z" fill="black"/>
@@ -325,9 +325,9 @@ const UseCases = () => {
                                         [mask-image:linear-gradient(to_top,transparent,black_70%,black)]
                                         [-webkit-mask-image:linear-gradient(to_top,transparent,black_70%,black)]
                                         `}>
-                                    <div className={`px-2 h-full w-full grid grid-cols-3 md:grid-cols-4 grid-rows-3 gap-[6px]`}>
+                                    <div className={`px-2 h-full w-full grid grid-cols-3 tablet:grid-cols-4 grid-rows-3 gap-[6px]`}>
                                         {Array.from({ length: 12 }).map((_, index) => (
-                                            <div key={index} className={`flex items-center justify-center gap-x-1 md:gap-x-2 px-2 bg-white border border-gray-300 rounded-full`}>
+                                            <div key={index} className={`flex items-center justify-center gap-x-1 tablet:gap-x-2 px-2 bg-white border border-gray-300 rounded-full`}>
                                                 <svg className={`h-5 w-5 md:h-6 md:w-6`} viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <g clip-path="url(#clip0_454_14070)">
                                                         <path d="M9.24783 9.95288H7.29221V8.85743H9.24897V9.95345L9.24783 9.95288ZM11.2046 2.75415V6.19714H14.6476L11.2046 2.75415ZM11.9867 8.85743H10.03V9.95345H11.9867V8.85743ZM11.9867 10.7356H10.03V11.8316H11.9867V10.7356ZM14.647 6.48406V15.5873C14.647 16.1061 14.227 16.5261 13.7082 16.5261H5.57014C5.44685 16.5261 5.32478 16.5018 5.21088 16.4547C5.09698 16.4075 4.99349 16.3383 4.90631 16.2512C4.73026 16.0751 4.63135 15.8363 4.63135 15.5873V3.69294C4.63135 3.1742 5.05139 2.75415 5.57014 2.75415H10.9171V6.48406H14.647ZM12.7689 8.0753H6.50893V12.6137H12.7694V8.07472L12.7689 8.0753ZM9.24783 10.7356H7.29221V11.8316H9.24897V10.7356H9.24783Z" fill="#20A464"/>
@@ -350,14 +350,38 @@ const UseCases = () => {
                                         <div className={`p-2 h-1/2 w-full font-sans flex items-center text-[#464646]/50`}>Ask, research, or do work</div>
                                         <div className={`w-full h-1/2 flex items-center justify-between`}>
                                             <div className={`h-full flex gap-x-2`}>
-                                                <div className={`h-full aspect-square border border-[#464646]/30 rounded-xl flex items-center justify-center`}>
+                                                <div className={`h-full aspect-square border border-[#E2E2E2] rounded-xl flex items-center justify-center`}>
                                                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000"><path d="M460-460H240v-40h220v-220h40v220h220v40H500v220h-40v-220Z"/></svg>
                                                 </div>
-                                                <div className={`h-full border border-[#464646]/30 rounded-xl flex items-center justify-center gap-x-3 py-1 px-3`}>
-                                                    <svg role="img" viewBox="0 0 24 24" className={`h-4 w-4`} xmlns="http://www.w3.org/2000/svg"><title>Notion</title><path d="M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 1.968c-.42-.326-.981-.7-2.055-.607L3.01 2.295c-.466.046-.56.28-.374.466zm.793 3.08v13.904c0 .747.373 1.027 1.214.98l14.523-.84c.841-.046.935-.56.935-1.167V6.354c0-.606-.233-.933-.748-.887l-15.177.887c-.56.047-.747.327-.747.933zm14.337.745c.093.42 0 .84-.42.888l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.748 0-.935-.234-1.495-.933l-4.577-7.186v6.952L12.21 19s0 .84-1.168.84l-3.222.186c-.093-.186 0-.653.327-.746l.84-.233V9.854L7.822 9.76c-.094-.42.14-1.026.793-1.073l3.456-.233 4.764 7.279v-6.44l-1.215-.139c-.093-.514.28-.887.747-.933zM1.936 1.035l13.31-.98c1.634-.14 2.055-.047 3.082.7l4.249 2.986c.7.513.934.653.934 1.213v16.378c0 1.026-.373 1.634-1.68 1.726l-15.458.934c-.98.047-1.448-.093-1.962-.747l-3.129-4.06c-.56-.747-.793-1.306-.793-1.96V2.667c0-.839.374-1.54 1.447-1.632z"/></svg>
-                                                    <svg role="img" viewBox="0 0 24 24" className={`h-4 w-4`} xmlns="http://www.w3.org/2000/svg"><title>Notion</title><path d="M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 1.968c-.42-.326-.981-.7-2.055-.607L3.01 2.295c-.466.046-.56.28-.374.466zm.793 3.08v13.904c0 .747.373 1.027 1.214.98l14.523-.84c.841-.046.935-.56.935-1.167V6.354c0-.606-.233-.933-.748-.887l-15.177.887c-.56.047-.747.327-.747.933zm14.337.745c.093.42 0 .84-.42.888l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.748 0-.935-.234-1.495-.933l-4.577-7.186v6.952L12.21 19s0 .84-1.168.84l-3.222.186c-.093-.186 0-.653.327-.746l.84-.233V9.854L7.822 9.76c-.094-.42.14-1.026.793-1.073l3.456-.233 4.764 7.279v-6.44l-1.215-.139c-.093-.514.28-.887.747-.933zM1.936 1.035l13.31-.98c1.634-.14 2.055-.047 3.082.7l4.249 2.986c.7.513.934.653.934 1.213v16.378c0 1.026-.373 1.634-1.68 1.726l-15.458.934c-.98.047-1.448-.093-1.962-.747l-3.129-4.06c-.56-.747-.793-1.306-.793-1.96V2.667c0-.839.374-1.54 1.447-1.632z"/></svg>
+                                                <div className={`h-full border border-[#E2E2E2] rounded-[12px] flex items-center justify-center gap-x-3 py-1 px-[10px]`}>
+                                                    <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <g clip-path="url(#clip0_597_2868)">
+                                                            <path d="M3.53706 10.474C3.53706 11.4252 2.76132 12.2021 1.81 12.2021C0.858684 12.2021 0.0820312 11.4252 0.0820312 10.474C0.0820312 9.52282 0.858943 8.74591 1.81013 8.74591H3.53719L3.53706 10.474ZM4.40767 10.474C4.40767 9.52282 5.18458 8.74591 6.13577 8.74591C7.08695 8.74591 7.86387 9.52269 7.86387 10.474V14.7998C7.86387 15.751 7.08708 16.5279 6.13577 16.5279C5.18458 16.5279 4.40767 15.751 4.40767 14.7998V10.474Z" fill="#DE1C59"/>
+                                                            <path d="M6.13577 3.53706C5.18458 3.53706 4.40767 2.76132 4.40767 1.81C4.40767 0.858684 5.18458 0.0820312 6.13577 0.0820312C7.08695 0.0820312 7.86387 0.858943 7.86387 1.81013V3.53719L6.13577 3.53706ZM6.13577 4.40767C7.08695 4.40767 7.86387 5.18458 7.86387 6.13577C7.86387 7.08695 7.08708 7.86387 6.13577 7.86387H1.81C0.858813 7.86387 0.0820312 7.08708 0.0820312 6.13577C0.0820312 5.18458 0.858943 4.40767 1.81013 4.40767H6.13577Z" fill="#35C5F0"/>
+                                                            <path d="M13.0739 6.13577C13.0739 5.18458 13.8496 4.40767 14.8009 4.40767C15.7523 4.40767 16.529 5.18458 16.529 6.13577C16.529 7.08695 15.7521 7.86387 14.8009 7.86387H13.0739V6.13577ZM12.2033 6.13577C12.2033 7.08695 11.4264 7.86387 10.4752 7.86387C9.52398 7.86387 8.74707 7.08708 8.74707 6.13577V1.81C8.74707 0.858813 9.52385 0.0820312 10.4752 0.0820312C11.4264 0.0820312 12.2033 0.858943 12.2033 1.81013V6.13577Z" fill="#2EB57D"/>
+                                                            <path d="M10.4752 13.0727C11.4264 13.0727 12.2033 13.8485 12.2033 14.7998C12.2033 15.7511 11.4264 16.5279 10.4752 16.5279C9.52398 16.5279 8.74707 15.751 8.74707 14.7998V13.0727H10.4752ZM10.4752 12.2021C9.52398 12.2021 8.74707 11.4252 8.74707 10.474C8.74707 9.52282 9.52385 8.74591 10.4752 8.74591H14.8009C15.7521 8.74591 16.529 9.52269 16.529 10.474C16.529 11.4252 15.7521 12.2021 14.8009 12.2021H10.4752Z" fill="#EBB02E"/>
+                                                        </g>
+                                                        <defs>
+                                                            <clipPath id="clip0_597_2868">
+                                                                <rect width="16.6101" height="16.6101" fill="white"/>
+                                                            </clipPath>
+                                                        </defs>
+                                                    </svg>
+
+                                                    <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <g clip-path="url(#clip0_597_2874)">
+                                                            <path d="M7.83347 8.68224H5.47484V7.36105H7.83486V8.68293L7.83347 8.68224ZM10.1935 0V4.15253H14.346L10.1935 0ZM11.1368 7.36105H8.77679V8.68293H11.1368V7.36105ZM11.1368 9.62625H8.77679V10.9481H11.1368V9.62625ZM14.3453 4.49857V15.4779C14.3453 16.1035 13.8387 16.6101 13.2131 16.6101H3.39788C3.24919 16.6101 3.10196 16.5808 2.96459 16.5239C2.82721 16.467 2.70239 16.3836 2.59726 16.2785C2.38492 16.0661 2.26562 15.7781 2.26562 15.4779V1.13226C2.26563 0.506608 2.77223 0 3.39788 0H9.84675V4.49857H14.3453ZM12.0801 6.41773H4.53014V11.8915H12.0808V6.41704L12.0801 6.41773ZM7.83347 9.62625H5.47484V10.9481H7.83486V9.62625H7.83347Z" fill="#20A464"/>
+                                                        </g>
+                                                        <defs>
+                                                            <clipPath id="clip0_597_2874">
+                                                                <rect width="16.6101" height="16.6101" fill="white"/>
+                                                            </clipPath>
+                                                        </defs>
+                                                    </svg>
+
                                                     <svg role="img" viewBox="0 0 24 24" className={`h-4 w-4`} xmlns="http://www.w3.org/2000/svg"><title>Notion</title><path d="M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 1.968c-.42-.326-.981-.7-2.055-.607L3.01 2.295c-.466.046-.56.28-.374.466zm.793 3.08v13.904c0 .747.373 1.027 1.214.98l14.523-.84c.841-.046.935-.56.935-1.167V6.354c0-.606-.233-.933-.748-.887l-15.177.887c-.56.047-.747.327-.747.933zm14.337.745c.093.42 0 .84-.42.888l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.748 0-.935-.234-1.495-.933l-4.577-7.186v6.952L12.21 19s0 .84-1.168.84l-3.222.186c-.093-.186 0-.653.327-.746l.84-.233V9.854L7.822 9.76c-.094-.42.14-1.026.793-1.073l3.456-.233 4.764 7.279v-6.44l-1.215-.139c-.093-.514.28-.887.747-.933zM1.936 1.035l13.31-.98c1.634-.14 2.055-.047 3.082.7l4.249 2.986c.7.513.934.653.934 1.213v16.378c0 1.026-.373 1.634-1.68 1.726l-15.458.934c-.98.047-1.448-.093-1.962-.747l-3.129-4.06c-.56-.747-.793-1.306-.793-1.96V2.667c0-.839.374-1.54 1.447-1.632z"/></svg>
                                                 </div>
+
                                             </div>
 
                                             <div className={`h-full flex gap-x-4`}>
@@ -368,7 +392,7 @@ const UseCases = () => {
                                                     <div className={`text-[14px] font-sans font-medium`}>Automatic</div>
                                                 </div>
                                                 <div className={`h-full bg-black aspect-square rounded-xl flex items-center justify-center`}>
-                                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M450-180v-485.08L222.15-437.23 180-480l300-300 300 300-42.15 42.77L510-665.08V-180h-60Z"/></svg>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" height="22px" viewBox="0 -960 960 960" width="22px" fill="#FFFFFF"><path d="M450-180v-485.08L222.15-437.23 180-480l300-300 300 300-42.15 42.77L510-665.08V-180h-60Z"/></svg>
                                                 </div>
                                             </div>
                                         </div>

@@ -40,7 +40,7 @@ const UseCasesQnA = () => {
                 return (
                     <div key={index} className={`border-b border-gray-300/60 ${!isOpen ? "pb-3" : "pb-0"}`}>
                         <button onClick={() => setOpenIndex(isOpen ? null : index)} className="w-full flex justify-between items-center">
-                            <span className="font-grotesk text-[24] leading-[118%] tracking-[-2%]">{item.question}</span>
+                            <span className="font-grotesk text-[24px] leading-[118%] tracking-[-2%]">{item.question}</span>
                             <span className={`transition-transform ${isOpen ? "rotate-180 bg-black" : "bg-gray-300/50"} h-8 w-8 rounded-full flex items-center justify-center`}>
                                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill={isOpen ? "#FFF" : "#000"}><path d="M450-180v-485.08L222.15-437.23 180-480l300-300 300 300-42.15 42.77L510-665.08V-180h-60Z"/></svg>
                             </span>

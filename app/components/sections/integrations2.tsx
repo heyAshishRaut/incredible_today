@@ -1,40 +1,102 @@
 "use client"
 import {useState} from "react"
-import {motion} from "framer-motion"
+import {AnimatePresence, motion} from "framer-motion"
 import container from "@/public/Container.png"
+
+import one from "@/public/integrationImages/one.png"
+import two from "@/public/integrationImages/two.png"
+import three from "@/public/integrationImages/three.png"
+import four from "@/public/integrationImages/four.png"
+import five from "@/public/integrationImages/five.png"
+import six from "@/public/integrationImages/six.png"
+import seven from "@/public/integrationImages/seven.png"
+import eight from "@/public/integrationImages/two.png"
+import nine from "@/public/integrationImages/eight.png"
+import Image from "next/image";
 
 const items = [
     {
-        name: "Text Generations"
+        name: "Text Generations",
+        image: (
+            <Image src={one} alt={``} className={`object-center bg-center py-8 px-2 tablet:p-6`} fill />
+        )
     },
     {
-        name: "Web Search"
+        name: "Web Search",
+        image: (
+            <div className={`w-full h-full flex items-center justify-center`}>
+                <Image src={two} alt={``} className={`h-[218px] w-[337px]`} />
+            </div>
+        )
     },
     {
-        name: "Deep Research"
+        name: "Deep Research",
+        image: (
+            <div className={`w-full h-full flex items-center justify-center`}>
+                <div className={`relative h-[476px] w-[368px]`}>
+                    <Image src={three} alt={``} className={`absolute bottom-0 object-center`} />
+                </div>
+            </div>
+        )
     },
     {
-        name: "Image Generation"
+        name: "Image Generation",
+        image: (
+            <div className={`h-full w-full flex items-center justify-center`}>
+                <Image src={four} alt={``} className={`absolute object-center bg-center p-6`} fill />
+            </div>
+        )
     },
     {
-        name: "Video Generation"
+        name: "Video Generation",
+        image: (
+            <div className={`w-full h-full flex items-center justify-center`}>
+                <div className={`relative h-[187px] w-[393px]`}>
+                    <Image src={five} alt={``} className={`absolute bottom-0 object-center`} />
+                </div>
+            </div>
+        )
     },
     {
-        name: "OCR + File Intelligence"
+        name: "OCR + File Intelligence",
+        image: (
+            <div className={`w-full h-full flex items-end`}>
+                <div className={`relative bottom-0 h-[70%] w-full`}>
+                    <Image src={six} alt={``} className={`absolute bottom-0 bg-center object-center`} fill />
+                </div>
+            </div>
+        )
     },
     {
-        name: "Agents with Tools"
+        name: "Agents with Tools",
+        image: (
+            <div className={`h-full w-full flex items-center justify-center`}>
+                <Image src={seven} alt={``} className={`object-center bg-center p-6`} />
+            </div>
+        )
     },
     {
-        name: "Agents with MCP"
+        name: "Agents with MCP",
+        image: (
+            <div className={`w-full h-full flex items-center justify-center`}>
+                <div className={`relative h-[187px] w-[393px]`}>
+                    <Image src={five} alt={``} className={`absolute bottom-0 object-center`} />
+                </div>
+            </div>
+        )
     },
     {
-        name: "Multi-step Workflows"
+        name: "Multi-step Workflows",
+        image: (
+            <div className={`w-full h-full flex items-center justify-center`}>
+                <Image src={nine} alt={``} className={`object-center bg-center p-14`} fill />
+            </div>
+        )
     }
 ]
 
 const Integrations2 = () => {
-    const [activeIndex, setActiveIndex] = useState<number | null>(null)
+    const [activeIndex, setActiveIndex] = useState<number | null>(0)
 
     return (
         <div className={`w-full flex flex-col gap-y-20 p-5 tablet:p-10 laptop:p-25 desktop:p-[120px]`}>
@@ -132,7 +194,7 @@ const Integrations2 = () => {
                 </div>
 
                 <div className={`w-full max-w-[450px] tablet:max-w-[816px] flex flex-col items-center tablet:items-start gap-y-[24px] tablet:gap-y-0 tablet:flex-row tablet:gap-x-[24px] laptop:gap-x-[32px]`}>
-                    <div className={`w-[70%] tablet:w-[224px] flex flex-col gap-y-[2px] p-1 bg-[#D5D5D5]/30 text-[#666] rounded-[16px]`}>
+                    <div className={`w-full tablet:w-[224px] flex flex-col gap-y-[2px] p-1 bg-[#D5D5D5]/30 text-[#666] rounded-[16px]`}>
                         {
                             items.map((e, index) => {
                                 const isActive = activeIndex === index;
@@ -141,20 +203,14 @@ const Integrations2 = () => {
                                     <motion.div
                                         key={index}
                                         onClick={() => setActiveIndex(index)}
-                                        layout
-                                        whileTap={{scale: 0.96}}
-                                        transition={{
-                                            type: "spring",
-                                            stiffness: 300,
-                                            damping: 20,
-                                        }}
                                         className={`
                                         cursor-pointer select-none
                                         font-grotesk text-center text-[15px]
                                         px-[14px] py-[12px]
                                         rounded-[12px]
-                                        border transition-colors duration-200
-                                        ${isActive ? ` bg-white border-[#18181B]/6 text-black shadow-[0_12px_30px_rgba(255,255,255,0.15)]` : `border-none`}`}>
+                                        transition-colors duration-200
+                                        overflow-hidden
+                                        ${isActive ? ` bg-white border border-[#18181B]/6 text-black shadow-[0_0_0_1px_rgba(14,63,126,0.06),0_1px_1px_-0.5px_rgba(42,51,70,0.03),0_3px_3px_-1.5px_rgba(42,51,70,0.05),0_5px_5px_-2.5px_rgba(42,51,70,0.03),0_16px_16px_-8px_rgba(42,51,70,0.04)]` : `border-none`}`}>
                                         {e.name}
                                     </motion.div>
                                 )
@@ -162,8 +218,36 @@ const Integrations2 = () => {
                         }
                     </div>
 
-                    <div style={{ backgroundImage: `url(${container.src})` }} className={`bg-cover bg-center rounded-[34px] overflow-hidden h-[508px] w-full tablet:w-[540px] laptop:w-[560px]`}>
-
+                    <div style={{ backgroundImage: `url(${container.src})` }} className={`relative bg-cover bg-center rounded-[34px] overflow-hidden  h-[450px] tablet:h-[508px] w-full tablet:w-[540px] laptop:w-[560px]`}>
+                        <AnimatePresence mode="wait">
+                            {activeIndex !== null && (
+                                <motion.div
+                                    key={activeIndex}
+                                    initial={{
+                                        opacity: 0,
+                                        filter: "blur(6px)",
+                                        y: 6,
+                                    }}
+                                    animate={{
+                                        opacity: 1,
+                                        filter: "blur(0px)",
+                                        y: 0,
+                                    }}
+                                    exit={{
+                                        opacity: 0,
+                                        filter: "blur(6px)",
+                                        y: -6,
+                                    }}
+                                    transition={{
+                                        duration: 0.2,
+                                        ease: "easeOut",
+                                    }}
+                                    className="relative h-full w-full"
+                                >
+                                    {items[activeIndex].image}
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
                     </div>
                 </div>
             </div>
