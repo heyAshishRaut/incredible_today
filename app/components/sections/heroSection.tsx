@@ -58,7 +58,7 @@ const HeroSection = () => {
                     <div className={`w-full max-w-[450px] tablet:max-w-[550px] laptop:max-w-[690px] flex flex-col items-center gap-y-[40px] laptop:gap-y-[70px] mx-auto`}>
                         <div className={`flex flex-col items-center gap-y-[24px] tablet:gap-y-[34px]`}>
                             <div className={`w-full flex flex-col gap-y-[14px]`}>
-                                <div className={`font-grotesk font-medium text-[36px] tablet:text-[46px] laptop:text-[56px] leading-[110%] tracking-[-2%] text-center`}>Agentic AI models purpose built for work.</div>
+                                <div className={`font-grotesk font-medium text-[36px] tablet:text-[46px] laptop:text-[56px] desktop:text-[66px] leading-[110%] tracking-[-2%] text-center`}>Agentic AI models purpose built for work.</div>
                                 <div className={`w-full tablet:w-[506px] mx-auto font-grotesk font-medium text-[15px] tablet:text-[17px] text-center text-[#464646]/86 leading-[150%] tracking-[-2%]`}>We optimize for the single statistic that matters: Amount of real-world tasks a model can solve</div>
                             </div>
 
