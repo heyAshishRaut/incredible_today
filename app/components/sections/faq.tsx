@@ -241,7 +241,7 @@ const Faq = () => {
                                 className="cursor-pointer border-b-[1px] border-dashed border-[#666] w-full max-w-[450px] gap-x-[20px] tablet:max-w-[600px] laptop:max-w-[743px] flex justify-between items-start p-[10px] tablet:p-[20px]"
                             >
                                 <div className="select-none w-full tablet:w-[591px] flex flex-col gap-y-5">
-                                    <div className="font-grotesk font-medium leading-[100%] tracking-[-1%] text-[18px]">
+                                    <div className="font-grotesk font-medium leading-[100%] tracking-[-1%] text-[16px] tablet:text-[18px]">
                                         {e.question}
                                     </div>
 
@@ -252,7 +252,7 @@ const Faq = () => {
                                                 animate={{height: "auto", opacity: 1}}
                                                 exit={{height: 0, opacity: 0}}
                                                 transition={{duration: 0.3, ease: "easeOut"}}
-                                                className="overflow-hidden font-grotesk text-[#666] leading-[150%] tracking-[-2%] text-[16px]"
+                                                className="overflow-hidden font-grotesk text-[#666] leading-[150%] tracking-[-2%] text-[15px] tablet:text-[16px]"
                                             >
                                                 {e.answer}
                                             </motion.div>
