@@ -238,7 +238,7 @@ const Faq = () => {
                             <div
                                 key={index}
                                 onClick={() => handleToggle(index)}
-                                className="cursor-pointer border-b-[1px] border-dashed border-[#666] w-full max-w-[450px] gap-x-[20px] tablet:max-w-[600px] laptop:max-w-[743px] flex justify-between items-start p-[20px]"
+                                className="cursor-pointer border-b-[1px] border-dashed border-[#666] w-full max-w-[450px] gap-x-[20px] tablet:max-w-[600px] laptop:max-w-[743px] flex justify-between items-start p-[10px] tablet:p-[20px]"
                             >
                                 <div className="select-none w-full tablet:w-[591px] flex flex-col gap-y-5">
                                     <div className="font-grotesk font-medium leading-[100%] tracking-[-1%] text-[18px]">
@@ -282,7 +282,7 @@ const Faq = () => {
                             </div>
                         )
                     })}
-                    <div className={`w-full max-w-[450px] tablet:max-w-[600px] laptop:max-w-[740px] h-[95px] flex items-center justify-between gap-x-[10px] tablet:gap-x-0 p-5`}>
+                    <div className={`w-full max-w-[450px] tablet:max-w-[600px] laptop:max-w-[740px] h-[95px] flex items-center justify-between gap-x-[10px] tablet:gap-x-0 p-[10px] tablet:p-5`}>
                         <div className={`font-grotesk font-medium leading-[100%] tracking-[-1%] text-[16px] tablet:text-[18px]`}>Still have questions? We're here to help!</div>
                         <div className={`h-[55px] w-[130px] p-1 rounded-full bg-[#0D2247]/5 border border-[#0D2247]/10`}>
                             <div className={`h-full w-full bg-[#27292F] rounded-full flex items-center justify-center`}>
