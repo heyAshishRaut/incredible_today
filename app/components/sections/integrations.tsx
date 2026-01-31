@@ -59,7 +59,6 @@ const Integrations = () => {
                             Incredible connects to the tools your team already uses. From calendars, to project management, to collaboration platforms.
                         </div>
                     </div>
-
                 </div>
 
                 <div className={`w-full flex flex-col items-center gap-y-[40px] laptop:gap-y-[60px]`}>

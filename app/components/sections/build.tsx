@@ -188,7 +188,7 @@ const Build = () => {
                                     <ul className={`list-disc px-[24px]`}>
                                         {
                                             e.list.map((items, i) => (
-                                                <li className={`text-[#666] leading-[#150%] tracking-[-2%] font-grotesk text-[15px]`}>{items.name}</li>
+                                                <li className={`text-[#666] leading-[#150%] tracking-[-2%] font-grotesk text-[14px] tablet:text-[15px]`}>{items.name}</li>
                                             ))
                                         }
                                     </ul>
